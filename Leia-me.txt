@@ -1,0 +1,97 @@
+Faço uma comparação computacional das três implementações para Lista de Prioridade 
+vista em sala de aula.
+
+Na pasta Instancias//ListaPrioridades// temos diversos arquivos txt, 
+que irão simular uma aplicação que utiliza uma lista de prioridade. Por exemplo, 
+no arquivo tarefa100.txt irá conter 100 inteiros, um em cada linha, que representam a prioridades
+iniciais, com elas vocês devem criar a lista de prioridade usando o método construir.
+
+Para cada arquivos tarefa*.txt (com * = 100, 10000, 50000, 100000, 500000, 800000) 
+teremos arquivos com as operações que devem ser realizadas, por exemplo, para o arquivo
+tarefa100.txt temos os arquivos operacoesA_100.txt, operacoesI_100.txt, operacoesR_100.txt 
+e operacoess_100.txt, onde para o arquivo de operações com a letra A, indica que ele possui
+mais operações de alteração, para a letra I, de inserção, e assim sucessivamente.
+A proporção é de 40% - 20% - 20% - 20% de operações em cada arquivo, com a operação
+em maior quantidade com 40%.
+
+O projeto já possui código que realizar a leitura de arquivos. A classe EDAUtil possui
+os seguintes métodos;
+List<Integer> getDadosIniciais(String path)
+    Recebe o caminho do arquivo de tarefa e retorna uma lista de inteiro com as prioridades iniciais.
+
+List<Operacao> getOperacoes(String path)
+	Recebe o caminho do arquivo de operações e retorna uma lista de objetos da classe
+	Operacao, contendo as operações que devem ser realizadas.
+	
+    Classe Operacao é responsável por armazenar uma operação que será realizada na 
+	lista de prioridade. Ela possui três atributo String id, Integer valor e Integer novoValor.
+	O atributo id contém o identificador da operação sendo as seguintes possibilidades: Inserção: I; Remoção: R; Alteração: A; S: Seleção.
+    O atributo valor terá o valor a ser inserido, o valor que foi removido, o valor que será alterado e o valor com maior prioridade, respectivamente para as operações de inserção, remoção, alteração e seleção.
+    O atributo novoValor terá o novo valor da prioridade para a operação de alteração. Para as demais operações ele terá valor 0(zero).  	
+
+Vocês devem implementar a classe TesteListaPrioridadesHeap, TesteListaPrioridadesNOrdenado, TesteListaPrioridadesOrdenado
+que irão realizar os testes computacionais. O método main dessas classes já possuem um código
+para que vocês possam tirar por base.
+
+Para cada arquivo de tarefa, execute as operações dos arquivos de operações, usando cada
+implementação da lista de prioridade calculando o tempo computacional que cada implementação
+precisou para executar as operações.
+
+Criem tabelas com os tempos computacionais de cada implementação e depois comentem (conclusões)
+explicando em qual situação uma implementação foi melhor que a outra, em qual arquivo de operações
+ele foi mais rápido, a diferença de tempo proporcional em relação ao segundo e terceiro colocado, e assim sucessivamente.
+
+As conclusões devem ser feitos baseados nos dados das tabelas que vocês irão criar.
+Não será aceito conclusões feitas que não esteja de acordo com os dados das tabelas.
+Quanto mais tabelas melhor será obter conclusões sobre os experimentos. Por exemplo,
+vocês podem criar uma tabela contendo o tempo total em processar cada arquivo de operações
+agrupados pelas letras A, I, R e S, como no exemplo abaixo:
+
+            OperaçõesA OperaçõesI OperaçõesR OperaçõesS
+HeapMaximo      1000       900         800       700
+Ordenado        2000       1800        1600      1400
+NOrdenado       3000       2000        1900      1800 
+
+"Podemos concluir que a implementação usando HeapMaximo é sempre melhor comparados com 
+as outras e em médias o tempo é sempre 50% menor comparado com a implementaçao usando vetor ordenado
+e quando comparado com o vetor não ordeando, temos que para os arquivos operaçõesA ele é
+1/3 menor, 45% menor para operaçõesI, 42% menor para operaçõesR e 38% menor para operações S."
+
+Repare que esse é apenas um exemplo de tabela e comentário, vocês devem criar outras tabelas,
+para que possam tirar sua próprias conclusões, por exemplo, para cada arquivo de operações,
+computar não apenas o tempo total mais o tempo total de cada operação, por exemplo,
+o HeapMaximo executou o arquivo "operacoesA_100.txt" em um tempo total de 800, 
+você calcula nessa instãncia qual foi o tempo total de cada operação (alteração, remoção, seleção e inserção).
+Repare que nesse exemplo, falei de fazer apenas para uma instância, você pode fazer isso para grupo de 
+instâncias. 
+
+Implementem as classes TesteListaPrioridadesHeap, TesteListaPrioridadesNOrdenado e TesteListaPrioridadesOrdenado
+para realizarem esses testes computacional e criem um arquivo word (e seus similares)
+com as tabelas e as conclusões. Esse arquivo word deve está dentro da pasta ResultadosComputacionais//ListaPrioridades
+que está dentro do projeto.
+Na primeira parte do arquivo word, coloque a configuração da máquina que foi realizado o testes
+computacionais, quantidade de memória, processador, SO e etc.
+No restante do arquivo coloque as tabelas com as conclusões.
+
+ATENÇÃO
+VOCÊS ESTÃO LIVRES PARA DEFINIR SUAS PRÓRIAS TABELAS, NA VERDADE, ESSAS TABELAS 
+QUE MENCIONEI SÃO APENAS EXEMPLOS QUE VOCÊS PODEM USAR, MAS NOVAS TABELAS DEVEM 
+SER CRIADAS. ISSO É OBRIGATÓRIO, QUEM APENAS CRIAR AS TABELAS QUE MENCIONEI TERÁ
+SEU TRABALHO DESCARTADO.
+
+ESSA ATIVIDADE VALE 0.5 SENDO QUE A PARTE DE IMPLEMENTAÇÃO TERÁ 0.1 E A PARTE DE 
+TIRAR CONCLUSÕES DOS RESULTADOS COMPUTACIONAIS TERÁ 0.4.
+
+QUALQUER CONCLUSÃO NÃO BASEADO EM TABELAS SERÁ DESCARTADA.
+CONCLUSÕES SIMPLÓRIAS, SEM ARGUMENTOS, COMO POR EXEMPLO: 
+"COMO PODEMOS VER A IMPLEMENTEÇÃO USANDO HEAP BINARIO É MELHOR".
+ESSES TIPOS DE CONCLUSÕES TAMBÉM SERÃO DESCARTADAS.
+
+Pode fazer de dupla, sendo que cada um envie para o gitHub.
+Prazo: 26/03 via gitHub.
+
+Qualquer dúvida me procurem ou enviem e-mail.
+
+Abraços.
+
+
