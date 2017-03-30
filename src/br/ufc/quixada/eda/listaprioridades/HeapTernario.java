@@ -30,7 +30,7 @@ public class HeapTernario {
 		if((f - 1) <= n){
 			if(f <= n){
 				if((f + 1) <= n){
-					if((vetor[i - 1] < vetor[i]) && (vetor[f] < vetor[f + 1])){
+					if((vetor[f - 1] < vetor[f]) && (vetor[f] < vetor[f + 1])){
 						f++;
 					}
 				}
