@@ -1,10 +1,10 @@
 package br.ufc.quixada.eda.grafos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // Este é um exemplo simples de implementação de grafo representado por lista
 // de adjacências
-
-import java.util.List;
-import java.util.ArrayList;
 
 public class Grafo {
 	private int m; //Qtd de arestas
@@ -14,7 +14,7 @@ public class Grafo {
     public Grafo(int n, int m){
     	this.m = m;
     	this.n = n;
-        arestas = new ArrayList<Aresta>();
+        arestas = new ArrayList<>();
     }
     
     public int getQtdDeArestas(){

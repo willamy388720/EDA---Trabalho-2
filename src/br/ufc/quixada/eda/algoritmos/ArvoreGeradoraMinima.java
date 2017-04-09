@@ -43,13 +43,13 @@ public class ArvoreGeradoraMinima {
 	}
 	
 	public List<Aresta> kruskal(Grafo g){
+		Aresta a = new Aresta(0, 0, 0);
 		List<Aresta> solucao = new ArrayList<Aresta>();
 		ConjuntoDisjunto conj = new ConjuntoDisjunto(g.getQtdDeVertices());
 		for(int i = 0; i < g.getQtdDeVertices(); i++)
 			conj.make_set(i);
-		quickSort(a.get);
+		quickSort(a.getOrigem(), a.getDestino());
 		for(int i = 0; i < g.getQtdDeArestas(); i++){
-			Aresta a = g.getArestas(i);
 			if(conj.find_set(a.getDestino()) != conj.find_set(a.getOrigem())){
 				solucao.add(a);
 				conj.union(conj.find_set(a.getOrigem()), a.getDestino());
