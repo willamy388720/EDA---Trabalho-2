@@ -14,7 +14,7 @@ public class TesteAlgoritmoKruskal {
 		try {
 			long tempoTotal = 0;
 			for (int tamanho : CriarInstancia.tamanhoInstancias) {				
-				String path = EDAConstants.caminhoPasta + "tarefa" + tamanho + ".txt";
+				String path = EDAConstants.caminhoPasta + "tb8ch" + tamanho + ".txt";
 				List<Integer> entrada = EDAUtil.getDadosIniciais(path);
 				
 				/*
