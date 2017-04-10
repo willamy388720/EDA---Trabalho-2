@@ -7,12 +7,10 @@ import br.ufc.quixada.eda.grafos.*;
 import br.ufc.quixada.eda.conjuntodisjuntos.*;
 
 public class ArvoreGeradoraMinima {
-	private List<Aresta> arestas;
 	private int vetor[] = null;
 	
 	public ArvoreGeradoraMinima(int n){
 		vetor = new int[n];
-		arestas = new ArrayList<>();
 	}
 	
 	private int particiona(int p, int r){	
@@ -48,14 +46,17 @@ public class ArvoreGeradoraMinima {
 		ConjuntoDisjunto conj = new ConjuntoDisjunto(g.getQtdDeVertices());
 		for(int i = 0; i < g.getQtdDeVertices(); i++)
 			conj.make_set(i);
+		
 		quickSort(a.getOrigem(), a.getDestino());
+		
 		for(int i = 0; i < g.getQtdDeArestas(); i++){
+			
 			if(conj.find_set(a.getDestino()) != conj.find_set(a.getOrigem())){
 				solucao.add(a);
 				conj.union(conj.find_set(a.getOrigem()), a.getDestino());
 			}
 		}
-		return arestas;
+		return solucao;
 	}
 	
 
