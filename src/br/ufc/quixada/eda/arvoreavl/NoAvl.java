@@ -1,30 +1,31 @@
 package br.ufc.quixada.eda.arvoreavl;
 
-public class NoAvl {
-	private NoAvl esq, dir;
+public class NoAvl<T> {
+	private NoAvl<T> esq, dir;
 	private int chave, altura;
+	private T valor;
 	
-	public NoAvl(int chave) {
-		super();
+	public NoAvl(int chave, T valor) {
 		esq = null;
 		dir = null;
 		this.chave = chave;
 		this.altura = 1;
+		this.valor = valor;
 	}
 
-	public NoAvl getEsq() {
+	public NoAvl<T> getEsq() {
 		return esq;
 	}
 
-	public void setEsq(NoAvl esq) {
+	public void setEsq(NoAvl<T> esq) {
 		this.esq = esq;
 	}
 
-	public NoAvl getDir() {
+	public NoAvl<T> getDir() {
 		return dir;
 	}
 
-	public void setDir(NoAvl dir) {
+	public void setDir(NoAvl<T> dir) {
 		this.dir = dir;
 	}
 
